@@ -56,7 +56,7 @@
 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" value="{{ form.password.value }}" required>
+                    <input type="password" class="form-control" id="password" name="password" value="{{ form.password.value }}" required oninput="validatePassword()">
                     {% if form.password.errors %}
                         <div class="text-danger">
                             {% for error in form.password.errors %}
@@ -65,6 +65,20 @@
                         </div>
                     {% endif %}
                 </div>
+                
+                <script>
+                function validatePassword() {
+                    var passwordInput = document.getElementById('password');
+                    var passwordValue = passwordInput.value;
+                    var minLength = 8;
+                    
+                    if (passwordValue.length < minLength) {
+                        passwordInput.setCustomValidity('Password must be at least 8 characters long.');
+                    } else {
+                        passwordInput.setCustomValidity('');
+                    }
+                }
+                </script>
 
                 <div class="form-group">
                     <label for="phone">Phone:</label>
