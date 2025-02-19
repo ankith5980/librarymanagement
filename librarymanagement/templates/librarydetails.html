@@ -1,0 +1,110 @@
+{% extends 'adminafterlogin.html' %}
+{% load static %}
+{% block content %}
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+
+        .menu {
+            top: 50px;
+        }
+
+        h6 {
+            color: white;
+        }
+
+        .order-card {
+            color: #fff;
+            width: 100%; /* Full width within the column */
+            height: 150px; /* Fixed height for cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+
+        .bg-c-blue {
+            background: linear-gradient(45deg, #4099ff, #73b4ff);
+        }
+
+        .bg-c-green {
+            background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+        }
+
+        .bg-c-yellow {
+            background: linear-gradient(45deg, #FFB64D, #ffcb80);
+        }
+
+        .bg-c-pink {
+            background: linear-gradient(45deg, #FF5370, #ff869a);
+        }
+
+        .card {
+            border-radius: 5px; /* Slightly rounded corners */
+            box-shadow: 0 1px 2.94px rgba(4, 26, 55, 0.16);
+            border: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card .card-block {
+            padding: 25px;
+            text-align: center; /* Center text inside card */
+        }
+
+        .order-card i {
+            font-size: 26px;
+        }
+
+        .f-left {
+            float: left;
+        }
+
+        .f-right {
+            float: right;
+        }
+    </style>
+
+    <div class="row">
+       
+            <div class="container" style="margin-top: 0px;">
+               <div class="container" style="padding: 0px 20px 0px 50px;">
+                <div class="row">
+                    <!-- First Card -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <a href="/view_library_details">
+                                    <h6 class="m-b-15">View Details</h6>
+                                   
+                                </a>
+                                <h2 class="text-right"><i class="fas fa-users f-left"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Card -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <a href="/add_library_details">
+                                    <h6 class="m-b-20">Add Details</h6>
+                                </a>
+                                <h2 class="text-right"><i class="fas fa-user-plus f-left"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Card -->
+                   
+
+                    <!-- Fourth Card -->
+                </div>
+               </div>
+            </div>
+     
+    </div>
+{% endblock %}

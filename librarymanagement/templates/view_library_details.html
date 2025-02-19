@@ -1,0 +1,24 @@
+{% extends 'adminafterlogin.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">Library Details</h2>
+        <ul class="list-group mt-4">
+            <li class="list-group-item"><strong>Total Books:</strong> {{ details.total_books }}</li>
+            <li class="list-group-item"><strong>Operating Hours:</strong> {{ details.operating_hours }}</li>
+            <li class="list-group-item"><strong>Membership Information:</strong> {{ details.membership_info }}</li>
+            <li class="list-group-item"><strong>Policies:</strong> {{ details.policies }}</li>
+        </ul>
+    </div>
+</body>
+</html>
+{% endblock %}

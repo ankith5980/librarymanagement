@@ -1,0 +1,47 @@
+{% extends 'adminafterlogin.html' %}
+
+{% load widget_tweaks %}
+{% block content %}
+{% load static %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+    /* Your existing CSS here */
+</style>
+
+<br><br>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <p>Update Book</p>
+            </div>
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {% render_field form.name class="form-control" placeholder="Name" %}
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.author class="form-control" placeholder="Author" %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {% render_field form.image class="form-control" placeholder="Image" %}
+                            {% if form.instance.image %}
+                                <img src="{{ form.instance.image.url }}" alt="Current Image" class="img-thumbnail mt-2" style="max-height: 150px;">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btnSubmit btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

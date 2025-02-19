@@ -1,0 +1,465 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>InfoPulse</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/fontAwesome.css">
+        <link rel="stylesheet" href="static/css/hero-slider.css">
+        <link rel="stylesheet" href="static/css/templatemo-main.css">
+        <link rel="stylesheet" href="static/css/owl-carousel.css">
+        
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <style>
+            #weather-time-widget {
+                transform-style: preserve-3d;
+                transition: transform 0.6s ease-in-out;
+            }
+        
+            .flip {
+                transform: rotateX(180deg);
+            }
+            .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    padding: 10px;
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+}
+
+            
+        </style>
+    </head>
+<!--
+Vanilla Template
+https://templatemo.com/tm-526-vanilla
+-->
+<body>
+
+    <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-story"><span>Our Story</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
+        </ul>
+    </div>
+
+    <div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="first-content">
+                <h1>Devagiri</h1>
+                <!-- <span><em>Bootstrap</em> v4.2.1 Theme</span> -->
+                <div class="primary-button">
+                    <a href="/adminlogin">Admin</a>
+                    <a href="/user">Student</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="weather-time-widget" style="position: fixed; color: white; bottom: 20px; right: 20px; background-color: #ff7d27; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 9999; text-align: center; font-size: 16px; font-weight: bold; perspective: 1000px;">
+        <div id="flipping-content" style="display: inline-block;">Loading...</div>
+    </div>
+
+    <div class="service-content" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>More About Devagiri</h4>
+                        <div class="line-dec"></div>
+                        <p>St. Joseph's College, Devagiri, also known as Devagiri College, is a college in Kozhikode, Kerala, India, offering graduation and postgraduation courses in arts and science.
+                        Please share our <a rel="nofollow" href="https://templatemo.com">website</a> to your friends or collegues. Thank you.</p>
+                        <ul>
+                            <li>-  St. Joseph's College, Devagiri</li>
+                            <li>-  Students and alumni are called "Devagirians."</li>
+                            <li>-  Accredited as a premier higher education institution</li>
+                            <li>-  Sed viverra arcu non nisi efficitur</li>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="#portfolio">Learn More About Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container">
+                        <div class="row">
+                            {% for news in news_items %}
+                            <div class="col-md-3 mb-4 col-lg-6"> <!-- Adjusted to 3 columns for 4 items per row -->
+                                <div class="service-item">
+                                    <h4>{{ news.title }}</h4>
+                                    <div class="line-dec"></div>
+                                    <p>{{ news.content }}</p>
+                                    <small class="text-muted">Published on {{ news.created_at|date:"F j, Y, g:i a" }}</small>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                        <!-- <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Unique &amp; Creative Ideas</h4>
+                                <div class="line-dec"></div>
+                                <p>Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Effective Team Work</h4>
+                                <div class="line-dec"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Fast Support 24/7</h4>
+                                <div class="line-dec"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>                 
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="parallax-content projects-content" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% if books %}
+                    <div id="owl-testimonials" class="owl-carousel owl-theme">
+                       
+                        {% for book in books %}
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <a href="static/img/1st-big-item.jpg" data-lightbox="image-1"><img src="{{ book.image.url }}" alt=""  height="400" style="object-fit: cover;"></a>
+                                <div class="text-content">
+                                    <h4>{{ book.name }}</h4>
+                                    <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        
+                    </div>
+                    {% else %}
+                    <p class="text-center">No books available.</p>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- index.html -->
+
+ 
+
+
+    
+
+    <div class="tabs-content" id="our-story">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="wrapper">
+                        <section id="first-tab-group" class="tabgroup">
+                            <div id="tab1">
+                                <img src="{% static 'img/l3.jpg' %}" alt="" style="width: 100%; max-width: 500px; height: auto;">
+                                <p>Total Books: {{ details.total_books }}</p>
+                            </div>
+                            <div id="tab2">
+                                <img src="{% static 'img/l2.jpg' %}" alt="" style="width: 100%; max-width: 500px; height: auto;">
+                                <p>Operating Hours: {{ details.operating_hours }}</p>
+                            </div>
+                            <div id="tab3">
+                                <img src="{% static 'img/l4.jpg' %}" alt="" style="width: 100%; max-width: 500px; height: auto;">
+                                <p>Membership Information: {{ details.membership_info }}</p>
+                            </div>
+                            <div id="tab4">
+                                <img src="{% static 'img/l5.jpg' %}" alt="" style="width: 100%; max-width: 500px; height: auto;">
+                                <p>Policies: {{ details.policies }}</p>
+                            </div>
+                        </section>
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                            <li><a href="#tab1" class="active">2008 - 2014</a></li>
+                            <li><a href="#tab2">2014 - 2016</a></li>
+                            <li><a href="#tab3">2016 - 2019</a></li>
+                            <li><a href="#tab4">2019 - Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% if blogs %}
+    <div class=" parallax-content projects-content" id="blogs">
+        <div class="row justify-content-center">
+            {% for blog in blogs %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background-color: rgba(255, 255, 255, 0.95);">
+                        <!-- Blog Image -->
+                        {% if blog.image %}
+                            <a href="{{ blog.image.url }}" data-lightbox="image-1">
+                                <img src="{{ blog.image.url }}" class="card-img-top img-fluid rounded-top" 
+                                     alt="{{ blog.title }}" style="height: 250px; object-fit: cover;">
+                            </a>
+                        {% else %}
+                            <div class="d-flex align-items-center justify-content-center" 
+                                 style="height: 250px; background-color: rgba(255, 255, 255, 0.938);">
+                                <p class="text-muted">No Image Available</p>
+                            </div>
+                        {% endif %}
+
+                        <!-- Card Body -->
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-primary fw-bold">{{ blog.title }}</h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                <strong>Message:</strong> {{ blog.message|truncatewords:30 }}
+                            </p>
+                        </div>
+                        
+                        <!-- Card Footer -->
+                        <!-- <div class="card-footer bg-transparent border-0 text-center">
+                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div> -->
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <p class="text-center text-muted">No blogs available.</p>
+{% endif %}
+<!-- 
+
+    <div class="parallax-content contact-content" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <div class="row">
+                            <form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                                      </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map">
+                    <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+<!-- 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --> 
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#home">Back To Top</a>
+                    </div>
+                   
+            
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="static/js/vendor/bootstrap.min.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/main.js"></script>
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            document.getElementById(cityName).style.display = "block";  
+        }
+    </script>
+
+
+ <script>
+    $(document).ready(function(){
+        var sections = ['#home', '#services', '#portfolio', '#our-story', '#blogs'];
+        var currentIndex = 0;
+
+        function autoScroll() {
+            currentIndex++;
+            if (currentIndex >= sections.length) {
+                 currentIndex = 0; // Reset to the first section
+            }
+
+            $('html, body').animate({
+                scrollTop: $(sections[currentIndex]).offset().top
+            }, 1000); // Adjust the duration for the smooth scroll here
+        }
+
+        setInterval(autoScroll, 5000);
+    });
+</script>  
+
+
+
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+
+              // Store hash
+              var hash = this.hash;
+
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+    </script>
+<div id="weather-time-widget" class="widget">
+    <div id="flipping-content"></div>
+</div>
+
+<style>
+    .flip {
+        transform: rotateY(180deg);
+        transition: transform 0.6s;
+    }
+</style>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        return `Time: ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    }
+
+    async function fetchTemperature() {
+        try {
+            const apiKey = '4f35aa6018a7c52c068ab9fb74cf1576'; // Replace with your weather API key
+            const location = 'calicut'; // Replace with desired location
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`);
+            const data = await response.json();
+            return `Temp: ${data.main.temp}°C`;
+        } catch (error) {
+            return 'Temp: Unavailable';
+        }
+    }
+
+    async function startFlippingContent() {
+        const weatherWidget = document.getElementById('weather-time-widget');
+        const flippingContent = document.getElementById('flipping-content');
+        let isShowingTime = true;
+        let isFlipping = false; // Prevent multiple flips at the same time
+
+        async function updateContent() {
+            if (isFlipping) return; // Skip if already flipping
+            isFlipping = true;
+
+            // Add the flip class to trigger animation
+            weatherWidget.classList.add('flip');
+
+            // Wait for half the flip duration (300ms) before updating content
+            setTimeout(async () => {
+                flippingContent.textContent = isShowingTime ? updateTime() : await fetchTemperature();
+
+                // Remove the flip class to reset animation after content updates
+                setTimeout(() => {
+                    weatherWidget.classList.remove('flip');
+                    isFlipping = false; // Animation completed, ready for the next update
+                }, 300);
+            }, 300);
+
+            // Toggle the content state
+            isShowingTime = !isShowingTime;
+        }
+
+        // Start with an initial update
+        await updateContent();
+
+        // Set an interval to update every 5 seconds
+        setInterval(updateContent, 5000);
+    }
+
+    // Start flipping the widget
+    startFlippingContent();
+</script>
+
+</body>
+</html>
